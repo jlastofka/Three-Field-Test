@@ -79,16 +79,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 sfpm = milling ? 175.0 : 1000.0     // carbide speeds
             }
         } else if selectedMaterial.text == "Custom" {
-            sfpm = Double(sfpmValue.text!)!
+            if sfpmValue.text != "" {               // safely handle blank entry
+                sfpm = Double(sfpmValue.text!)!
+            } else {
+                sfpm = 0
+                sfpmValue.text = "0"
+            }
+
         } else {
             sfpm = 1.0      // this would be an obvious error output
         }
         sfpmValue.text = String(Int(sfpm))
-        dia=Double(diaValue.text!)!
+        if diaValue.text != "" {                // safely handle blank entry
+            dia = Double(diaValue.text!)!
+            dia = (dia < 0.001) ? 0.001 : dia   // correct accidental 0 entry
+            diaValue.text = String(dia)
+        } else {
+            dia = 0.001                         // replace nul value
+            diaValue.text = "0.001"
+        }
         rpm = 3.82 * sfpm / dia
         rpmValue.text = String(Int(rpm))
         teethValue.text = String(Int(stepper.value))
-        feed = Double(feedPerTooth.text!)!
+        if feedPerTooth.text != "" {            // safely handle blank entry
+            feed = Double(feedPerTooth.text!)!
+        } else {
+            feed = 0
+            feedPerTooth.text = "0.000"
+        }
         ipmValue.text = String((feed * rpm * stepper.value*10).rounded()/10)
     }
     
@@ -96,7 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.diaValue.delegate = self       // this is for closing the keyboard
         self.feedPerTooth.delegate = self   // this is for closing the keyboard
-        self.sfpmValue.delegate = self   // this is for closing the keyboard
+        self.sfpmValue.delegate = self      // this is for closing the keyboard
 
         // listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -120,12 +138,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         materials.forEach { (button) in
             button.isHidden = !button.isHidden
         }
-        if selectedMaterial.text != "Custom"{
+        if selectedMaterial.text != "Custom" {      // Custom case is already hidden
         millingTurning.isHidden = !millingTurning.isHidden
         hssCarbide.isHidden = !hssCarbide.isHidden
         }
     }
-    
+
     @IBAction func aluminumChosen(_ sender: UIButton) {
         materials.forEach { (button) in
             button.isHidden = true
@@ -156,17 +174,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         hssCarbide.isHidden = !hssCarbide.isHidden
     }
     
-    
     @IBAction func customChosen(_ sender: UIButton) {
         materials.forEach { (button) in
             button.isHidden = true
         }
         selectedMaterial.text = "Custom"
         update()
-//        millingTurning.isHidden = !millingTurning.isHidden
-//        hssCarbide.isHidden = !hssCarbide.isHidden
-        millingTurning.isHidden = true
-        hssCarbide.isHidden = true
+        millingTurning.isHidden = true      // hide instead of toggle ...
+        hssCarbide.isHidden = true          //   ... unlike the other cases
     }
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
@@ -184,7 +199,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
     }
     
-   
     @IBAction func feedPerToothChanged(_ sender: UITextField) {
         resignFirstResponder()          // close keyboard
         update()
@@ -207,5 +221,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         update()
     }
-    
 }
