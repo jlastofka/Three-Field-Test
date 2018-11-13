@@ -184,18 +184,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T4H-v7-K38">
-                                <rect key="frame" x="146.66666666666666" y="210.66666666666666" width="120.99999999999997" height="29"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <segments>
-                                    <segment title="Milling"/>
-                                    <segment title="Turning"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.55725589769999995" blue="0.2782431293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="millingTurningChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="b1C-Eu-pf1"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by Jeff Lastofka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHy-BS-AAG">
                                 <rect key="frame" x="303" y="714" width="91" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,8 +191,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11 Oct 2018 v 1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-h9-jIE">
-                                <rect key="frame" x="20" y="714" width="94" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13 Oct 2018 v 1.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-h9-jIE">
+                                <rect key="frame" x="20" y="714" width="98" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -220,28 +208,54 @@
                                     <action selector="customChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yC-9V-emQ"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Mu-GE-baX">
+                                <rect key="frame" x="254" y="227" width="125" height="29"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="HSS"/>
+                                    <segment title="Carbide"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.55725589769999995" blue="0.2782431293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="hssCarbideChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UkM-YB-hDT"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T4H-v7-K38">
+                                <rect key="frame" x="36" y="227" width="121" height="29"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Milling"/>
+                                    <segment title="Turning"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.55725589769999995" blue="0.2782431293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="millingTurningChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="b1C-Eu-pf1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gzO-0Z-OQx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="06f-H4-84c"/>
                             <constraint firstItem="KSD-oC-gkt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="6Ub-V0-CKc"/>
-                            <constraint firstItem="T4H-v7-K38" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dnd-7k-Dwz"/>
+                            <constraint firstItem="T4H-v7-K38" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-110.5" id="Dnd-7k-Dwz"/>
                             <constraint firstItem="gzO-0Z-OQx" firstAttribute="top" secondItem="nBm-gs-mwn" secondAttribute="bottom" id="KXa-YI-5IZ"/>
                             <constraint firstItem="AxA-fO-BXf" firstAttribute="top" secondItem="KSD-oC-gkt" secondAttribute="bottom" constant="50" id="MRA-Gg-fEq"/>
                             <constraint firstItem="tLb-eZ-jrI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Pp8-xq-cTN"/>
                             <constraint firstItem="RUV-zU-rO3" firstAttribute="top" secondItem="xXr-oM-3oB" secondAttribute="bottom" id="RX0-4u-Pgm"/>
                             <constraint firstItem="xXr-oM-3oB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-180" id="TyA-Cp-PCf"/>
+                            <constraint firstItem="8Mu-GE-baX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="109.5" id="Vza-eq-rjo"/>
                             <constraint firstItem="gsL-0y-Su8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnT-Ks-Gcm"/>
                             <constraint firstItem="AxA-fO-BXf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ciN-nF-mvX"/>
                             <constraint firstItem="xXr-oM-3oB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dn1-4M-KLD"/>
                             <constraint firstItem="RUV-zU-rO3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dxT-jJ-58Z"/>
                             <constraint firstItem="Bax-fr-3DY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ep3-e4-a7x"/>
-                            <constraint firstItem="T4H-v7-K38" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-143.5" id="fYj-zb-A3y"/>
+                            <constraint firstItem="T4H-v7-K38" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-127" id="fYj-zb-A3y"/>
                             <constraint firstItem="gzO-0Z-OQx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gPI-rJ-xFu"/>
                             <constraint firstItem="KSD-oC-gkt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gYs-B9-AQf"/>
                             <constraint firstItem="tLb-eZ-jrI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ig9-sT-2qI"/>
                             <constraint firstItem="xXr-oM-3oB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ij9-9c-FNp"/>
                             <constraint firstItem="RUV-zU-rO3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j2Q-Y0-NIt"/>
+                            <constraint firstItem="8Mu-GE-baX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-127" id="kg7-Ne-zyy"/>
                             <constraint firstItem="nBm-gs-mwn" firstAttribute="top" secondItem="RUV-zU-rO3" secondAttribute="bottom" id="nGu-vQ-LfL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AxA-fO-BXf" secondAttribute="trailing" id="qez-ys-cNY"/>
                             <constraint firstItem="Bax-fr-3DY" firstAttribute="top" secondItem="gzO-0Z-OQx" secondAttribute="bottom" id="r8L-WH-4Rp"/>
@@ -260,6 +274,7 @@
                     <connections>
                         <outlet property="diaValue" destination="iwR-LE-lbY" id="BeZ-IR-KeR"/>
                         <outlet property="feedPerTooth" destination="FFh-FA-rjh" id="IWO-4j-aDE"/>
+                        <outlet property="hssCarbide" destination="8Mu-GE-baX" id="VSW-cJ-Hr6"/>
                         <outlet property="ipmValue" destination="a2i-A5-jkh" id="zaT-6j-fzb"/>
                         <outlet property="millingTurning" destination="T4H-v7-K38" id="dK8-ZR-Fga"/>
                         <outlet property="rpmValue" destination="liw-Lp-fFy" id="4LA-BO-sDp"/>
