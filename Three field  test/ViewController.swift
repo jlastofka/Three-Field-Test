@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var count = 0
     var feed = 0.0
     var milling = true      // true = milling, false = turning
+    var hss = true          // true = high speed steel, false = carbide
 
     @IBOutlet var materials: [UIButton]!
     
@@ -36,6 +37,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var feedPerTooth: UITextField!
 
     @IBOutlet weak var millingTurning: UISegmentedControl!
+    
+    @IBOutlet weak var hssCarbide: UISegmentedControl!
     
     // this is for closing the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -58,11 +61,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func update(){      // updates all fields after a change
         if selectedMaterial.text == "Aluminum" {
-            sfpm = milling ? 150.0 : 550.0
+            if hss {
+                sfpm = milling ? 200.0 : 550.0      // HSS speeds
+            } else {
+                sfpm = milling ? 900.0 : 1000.0     // carbide speeds
+            }
         } else if selectedMaterial.text == "Steel" {
-            sfpm = milling ? 80.0 : 150.0
+            if hss {
+                sfpm = milling ? 90.0 : 150.0       // HSS speeds
+            } else {
+                sfpm = milling ? 350.0 : 800.0      // carbide speeds
+            }
         } else if selectedMaterial.text == "Brass" {
-            sfpm = milling ? 150.0 : 325.0
+            if hss {
+                sfpm = milling ? 140.0 : 200.0      // HSS speeds
+            } else {
+                sfpm = milling ? 175.0 : 1000.0     // carbide speeds
+            }
         } else if selectedMaterial.text == "Custom" {
             sfpm = Double(sfpmValue.text!)!
         } else {
@@ -90,7 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
         selectedMaterial.text = "Aluminum"
         diaValue.text = "0.5"
-        feedPerTooth.text = String(0.005)
+        feedPerTooth.text = String(0.002)
         update()
     }
     
@@ -105,7 +120,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         materials.forEach { (button) in
             button.isHidden = !button.isHidden
         }
+        if selectedMaterial.text != "Custom"{
         millingTurning.isHidden = !millingTurning.isHidden
+        hssCarbide.isHidden = !hssCarbide.isHidden
+        }
     }
     
     @IBAction func aluminumChosen(_ sender: UIButton) {
@@ -115,6 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         selectedMaterial.text = "Aluminum"
         update()
         millingTurning.isHidden = !millingTurning.isHidden
+        hssCarbide.isHidden = !hssCarbide.isHidden
     }
     
     @IBAction func steelChosen(_ sender: UIButton) {
@@ -124,6 +143,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         selectedMaterial.text = "Steel"
         update()
         millingTurning.isHidden = !millingTurning.isHidden
+        hssCarbide.isHidden = !hssCarbide.isHidden
     }
     
     @IBAction func brassChosen(_ sender: UIButton) {
@@ -133,6 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         selectedMaterial.text = "Brass"
         update()
         millingTurning.isHidden = !millingTurning.isHidden
+        hssCarbide.isHidden = !hssCarbide.isHidden
     }
     
     
@@ -142,7 +163,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         selectedMaterial.text = "Custom"
         update()
-        millingTurning.isHidden = !millingTurning.isHidden
+//        millingTurning.isHidden = !millingTurning.isHidden
+//        hssCarbide.isHidden = !hssCarbide.isHidden
+        millingTurning.isHidden = true
+        hssCarbide.isHidden = true
     }
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
@@ -166,6 +190,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
     }
     
+    @IBAction func hssCarbideChanged(_ sender: UISegmentedControl) {
+        if hssCarbide.selectedSegmentIndex == 0 {
+            hss = true
+        } else {
+            hss = false
+        }
+        update()
+    }
+    
     @IBAction func millingTurningChanged(_ sender: UISegmentedControl) {
         if millingTurning.selectedSegmentIndex == 0 {
             milling = true
@@ -174,4 +207,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         update()
     }
+    
 }
