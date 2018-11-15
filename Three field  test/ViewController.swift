@@ -139,9 +139,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             button.isHidden = !button.isHidden
         }
         if selectedMaterial.text != "Custom" {      // Custom case is already hidden
-        millingTurning.isHidden = !millingTurning.isHidden
-        hssCarbide.isHidden = !hssCarbide.isHidden
+            millingTurning.isHidden = !millingTurning.isHidden
+            hssCarbide.isHidden = !hssCarbide.isHidden
         }
+        selectedMaterial.isHidden = !selectedMaterial.isHidden
     }
 
     @IBAction func aluminumChosen(_ sender: UIButton) {
@@ -152,6 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
         millingTurning.isHidden = !millingTurning.isHidden
         hssCarbide.isHidden = !hssCarbide.isHidden
+        selectedMaterial.isHidden = !selectedMaterial.isHidden
     }
     
     @IBAction func steelChosen(_ sender: UIButton) {
@@ -162,6 +164,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
         millingTurning.isHidden = !millingTurning.isHidden
         hssCarbide.isHidden = !hssCarbide.isHidden
+        selectedMaterial.isHidden = !selectedMaterial.isHidden
     }
     
     @IBAction func brassChosen(_ sender: UIButton) {
@@ -172,6 +175,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
         millingTurning.isHidden = !millingTurning.isHidden
         hssCarbide.isHidden = !hssCarbide.isHidden
+        selectedMaterial.isHidden = !selectedMaterial.isHidden
     }
     
     @IBAction func customChosen(_ sender: UIButton) {
@@ -182,6 +186,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         update()
         millingTurning.isHidden = true      // hide instead of toggle ...
         hssCarbide.isHidden = true          //   ... unlike the other cases
+        selectedMaterial.isHidden = !selectedMaterial.isHidden
     }
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
