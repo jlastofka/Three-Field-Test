@@ -34,7 +34,7 @@
                                     <action selector="selectMaterial:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8Y-Oa-Dpd"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUV-zU-rO3">
+                            <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUV-zU-rO3">
                                 <rect key="frame" x="0.0" y="203" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.741582659163039" blue="0.2985226667079558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Aluminum">
@@ -44,7 +44,7 @@
                                     <action selector="aluminumChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XyO-ez-mfb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBm-gs-mwn">
+                            <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBm-gs-mwn">
                                 <rect key="frame" x="0.0" y="233" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.741582659163039" blue="0.2985226667079558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Steel">
@@ -54,7 +54,7 @@
                                     <action selector="steelChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFw-yv-0fV"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-0Z-OQx">
+                            <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-0Z-OQx">
                                 <rect key="frame" x="0.0" y="263" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.741582659163039" blue="0.2985226667079558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Brass">
@@ -64,7 +64,7 @@
                                     <action selector="brassChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0x8-ZH-zdt"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-fr-3DY" userLabel="Custom">
+                            <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-fr-3DY" userLabel="Custom">
                                 <rect key="frame" x="0.0" y="293" width="414" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.74158265919999999" blue="0.29852266669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Custom">
@@ -93,8 +93,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13 Oct 2018 v 1.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-h9-jIE">
-                                <rect key="frame" x="20" y="714" width="98" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19 Nov 2018 v 1.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-h9-jIE">
+                                <rect key="frame" x="20" y="714" width="100" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -266,7 +266,6 @@
                             <constraint firstItem="tLb-eZ-jrI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tr6-K7-g9g"/>
                             <constraint firstItem="Bax-fr-3DY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vNf-ee-3Ar"/>
                             <constraint firstItem="nBm-gs-mwn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yiz-9X-jFK"/>
-                            <constraint firstItem="Bax-fr-3DY" firstAttribute="top" secondItem="AxA-fO-BXf" secondAttribute="bottom" id="zTO-0L-fcz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
